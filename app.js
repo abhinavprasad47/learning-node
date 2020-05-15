@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-
+const cors = require('cors')
 require('dotenv/config');
 
 //Import Routes
@@ -15,7 +15,7 @@ app.use('/posts',postsRoutes);
 /*app.use('/posts', () => {
     console.log('this is log');
 });*/
-
+app.use(cors());
 //Routes
 app.get('/', (req,res) => {
     res.send('powli');
